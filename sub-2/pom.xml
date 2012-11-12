@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>jp.skypencil.sonar</groupId>
+    <artifactId>root-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../</relativePath>
+  </parent>
+  <packaging>pom</packaging>
+  <artifactId>sub-2</artifactId>
+  <name>sub module 2</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.googlecode.jstd-maven-plugin</groupId>
+      <artifactId>jstd-maven-plugin</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src/main/js</sourceDirectory>
+    <testSourceDirectory>src/test/js</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>com.googlecode.jstd-maven-plugin</groupId>
+        <artifactId>jstd-maven-plugin</artifactId>
+        <configuration>
+          <verbose>true</verbose>
+          <reset>true</reset>
+          <port>9876</port>
+          <testOutput>${project.basedir}/target/jstestdriver</testOutput>
+          <browser>${browser}</browser>
+        </configuration>
+        <executions>
+          <execution>
+            <id>run-tests</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

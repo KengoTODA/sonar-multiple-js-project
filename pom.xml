@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.skypencil.sonar</groupId>
+  <artifactId>root-project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>root project</name>
+  <properties>
+    <browser>/usr/bin/google-chrome</browser>
+    <sonar.language>js</sonar.language>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.javascript.jstestdriver.reportsfolder>target/jstestdriver</sonar.javascript.jstestdriver.reportsfolder>
+  </properties>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.googlecode.jstd-maven-plugin</groupId>
+          <artifactId>jstd-maven-plugin</artifactId>
+          <version>1.3.2.5</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.googlecode.jstd-maven-plugin</groupId>
+        <artifactId>jstd-maven-plugin</artifactId>
+        <version>1.3.2.5</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <repositories>
+    <repository>
+      <id>jstd-maven-plugin google code repo</id>
+      <url>http://jstd-maven-plugin.googlecode.com/svn/maven2</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jstd-maven-plugin google code repo</id>
+      <url>http://jstd-maven-plugin.googlecode.com/svn/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <modules>
+    <module>sub-1</module>
+    <module>sub-2</module>
+  </modules>
+</project>
